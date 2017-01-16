@@ -11,7 +11,6 @@ export default class CardView extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className={classes.root}>
         <div className={`${classes.header} ${this.props.addNew ? classes.newHeader : ''}`}>

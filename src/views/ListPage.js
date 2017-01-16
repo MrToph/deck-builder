@@ -1,6 +1,7 @@
 import React from 'react'
 import Relay from 'react-relay'
 import CardPreview from '../components/CardPreview'
+import AddNew from '../components/AddNew'
 import './ListPage.scss'
 
 class ListPage extends React.Component {
@@ -23,6 +24,7 @@ class ListPage extends React.Component {
         {
           this.props.viewer.allPokemons.edges.map(e => e.node).map(n => <CardPreview key={n.id} card={n} />)
       }
+      <AddNew />
       </div>
     )
   }
