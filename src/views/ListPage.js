@@ -19,14 +19,12 @@ class ListPage extends React.Component {
 
   render() {
     return (
-      <div className={`${classes.root}`}>
         <div className={`${classes.horizontalContainer}`}>
           {
             this.props.viewer.allPokemons.edges.map(e => e.node).map(n => <CardPreview key={n.id} card={n} />)
           }
           <AddNew />
         </div>
-      </div>
     )
   }
 }

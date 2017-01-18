@@ -77,34 +77,32 @@ class CardPage extends React.Component {
 
   render() {
     return (
-      <div className={styles.root}>
-        <div className="content">
-          <CardView
-            addNew={this.isAddNew()}
-            name={this.state.name}
-            url={this.state.url}
-            onNameChange={newName => this.setState({ name: newName })}
-            onUrlChange={newUrl => this.setState({ url: newUrl })}
-          />
-          <div className="buttonContainer">
-            <div>
-              {!this.isAddNew() &&
-                <img
-                  src="https://raw.githubusercontent.com/learnrelay/pokedex/master/branch-step-04-solution/src/assets/delete.svg"
-                  className="deleteIcon"
-                  alt="Delete"
-                  onClick={this.onDelete}
-                />
-              }
-            </div>
-            <div className="actionButtonContainer">
-              <Link className="button cancelButton link" to={'/'}>
-                Cancel
-              </Link>
-              <button className="button saveButton" onClick={this.onSubmit}>
-                {this.isAddNew() ? 'Add' : 'Save'}
-              </button>
-            </div>
+      <div className="content">
+        <CardView
+          addNew={this.isAddNew()}
+          name={this.state.name}
+          url={this.state.url}
+          onNameChange={newName => this.setState({ name: newName })}
+          onUrlChange={newUrl => this.setState({ url: newUrl })}
+        />
+        <div className="buttonContainer">
+          <div>
+            {!this.isAddNew() &&
+              <img
+                src="https://raw.githubusercontent.com/learnrelay/pokedex/master/branch-step-04-solution/src/assets/delete.svg"
+                className="deleteIcon"
+                alt="Delete"
+                onClick={this.onDelete}
+              />
+            }
+          </div>
+          <div className="actionButtonContainer">
+            <Link className="button cancelButton link" to={'/'}>
+              Cancel
+            </Link>
+            <button className="button saveButton" onClick={this.onSubmit}>
+              {this.isAddNew() ? 'Add' : 'Save'}
+            </button>
           </div>
         </div>
       </div>
