@@ -1,7 +1,7 @@
 import React from 'react'
 import Relay from 'react-relay'
 import { Link } from 'react-router'
-import './CardPreview.scss'
+import classes from './CardPreview.scss'
 
 class CardPreview extends React.Component {
   static propTypes = {
@@ -9,17 +9,18 @@ class CardPreview extends React.Component {
   }
   render() {
     return (
-      <Link className="link" to={`/view/${this.props.card.id}`}>
-        <div className="previewPage">
-          <img className="previewImg" src={this.props.card.url} alt="card" />
-          <div className="previewName">
-            {this.props.card.name}
+      <Link className={classes.link} to={`/view/${this.props.card.id}`}>
+        <div className={`${classes.card} mdl-card mdl-shadow--6dp`}>
+          <img className={classes.previewImg} src={this.props.card.url} alt="card" />
+          <div className={`mdl-card__title ${classes.stickToBottom}`}>
+            <h2 className="mdl-card__title-text">{this.props.card.name}</h2>
           </div>
         </div>
       </Link>
     )
   }
 }
+
 
 export default Relay.createContainer(
   CardPreview,

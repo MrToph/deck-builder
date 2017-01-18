@@ -1,43 +1,31 @@
-.previewPage{
-  background-color: white;
-  border-radius: 3px;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.25);
-  width: 180px;
+.card {
+  width: 200px;
+  height: 300px;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 20px;
-  box-sizing: border-box;
-  /*height: 100%;*/
-  transition: transform .2s ease, box-shadow .2s ease;
-  backface-visibility: hidden;
+  margin: 10px 10px;
+  &:hover{
+    transform: scale(1.05);
+  }
 }
 
 .previewImg {
-  height: auto;
   display: block;
-  width: 100%;
+  position: absolute;
+  width: 80%;
+  top: 0;
+  bottom: 50px;
+  text-align: center;
+  margin: auto; /* vertical center */
   box-sizing: border-box;
 }
 
-.previewPage:hover{
-  transform: scale(1.05);
-  box-shadow: 0 4px 14px 0 rgba(0,0,0,0.15);
-}
-
-.previewName {
-  text-align: center;
-  color: #7F7F7F;
-  font-size: 24px;
-  user-select: none;
-  font-weight: 300;
-  padding: 20px 0 0;
+.stickToBottom {
+  position: absolute;
+  bottom: 0px;
 }
 
 .link {
-  position: relative;
   text-decoration: none;
-  padding: 10px;
-  display: flex;
+  display: inline-block;
 }

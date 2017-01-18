@@ -2,7 +2,7 @@ import React from 'react'
 import Relay from 'react-relay'
 import CardPreview from '../components/CardPreview'
 import AddNew from '../components/AddNew'
-import './ListPage.scss'
+import classes from './ListPage.scss'
 
 class ListPage extends React.Component {
   static propTypes = {
@@ -19,12 +19,13 @@ class ListPage extends React.Component {
 
   render() {
     return (
-      <div className="root">
-        {`Your viewer id is: ${this.props.viewer.id}`}
-        {
-          this.props.viewer.allPokemons.edges.map(e => e.node).map(n => <CardPreview key={n.id} card={n} />)
-      }
-      <AddNew />
+      <div className={`${classes.root}`}>
+        <div className={`${classes.horizontalContainer}`}>
+          {
+            this.props.viewer.allPokemons.edges.map(e => e.node).map(n => <CardPreview key={n.id} card={n} />)
+          }
+          <AddNew />
+        </div>
       </div>
     )
   }
