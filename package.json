@@ -54,7 +54,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
-    "classnames": "2.2.5",
+    "classnames": "^2.2.5",
     "graphql-config-parser": "^1.0.1",
     "history": "3.0.0",
     "material-design-icons": "^3.0.1",
