@@ -14,7 +14,7 @@ class ListPage extends React.Component {
   }
 
   state = {
-    displayStyle: 'Table',
+    displayStyle: 'Cards',
   }
 
   _sortByName() {

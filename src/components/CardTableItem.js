@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import Relay from 'react-relay'
+import { Link } from 'react-router'
 import classnames from 'classnames'
 import qm from '../../assets/qm.jpg'
 import classes from './CardTableItem.scss'
@@ -17,14 +18,16 @@ class CardTableItem extends React.Component {
     const { card } = this.props
     return (
       <li className="mdl-list__item">
-        <span className="mdl-list__item-primary-content">
-          { card.url ?
-            <div className={classnames(classes.bg, classes.imgSize)} style={{ backgroundImage: `url('${card.url}')` }} />
-            :
-            <div className={classnames(classes.bg, classes.imgSize)} style={{ backgroundImage: `url('${qm}')` }} />
+        <Link className={classes.noDecoration} to={`/view/${card.id}`}>
+          <span className="mdl-list__item-primary-content">
+            { card.url ?
+              <div className={classnames(classes.bg, classes.imgSize)} style={{ backgroundImage: `url('${card.url}')` }} />
+              :
+              <div className={classnames(classes.bg, classes.imgSize)} style={{ backgroundImage: `url('${qm}')` }} />
           }
-          { card.name }
-        </span>
+            { card.name }
+          </span>
+        </Link>
       </li>
     )
   }

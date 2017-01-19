@@ -1,11 +1,17 @@
 .imgSize {
   width: 60px;
   height: 60px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .bg {
   background-position: center;
   /* Make the background image cover the area of the <div>, and clip the excess */
   background-size: cover;
+}
+
+.noDecoration {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
 }
