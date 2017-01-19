@@ -2,63 +2,14 @@
   width: 350px;
   display: flex;
   flex-direction: column;
-  /*height: 75vh;*/
-}
-
-.buttonContainer {
-  margin: 25px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex: 0 0 auto;
-  align-items: center;
-}
-
-.buttonContainer img {
-  display: block;
-}
-
-.actionButtonContainer {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.deleteIcon {
-  height: 18px;
-  padding: 10px;
-  cursor: hand;
-  cursor: pointer;
 }
 
 .button {
-  height: 18px;
-  line-height: 1;
-  font-size: 18px;
-  padding: 15px 30px;
-  cursor: pointer;
-  flex: 0 0 auto;
-  font-weight: 300;
+  margin: 10px;
 }
 
-.cancelButton {
-  color: #A3A3A3;
-}
-
-.link {
-  position: relative;
-  text-decoration: none;
-  padding: 10px;
+.buttonContainer {
   display: flex;
-}
-
-.saveButton {
-  border-radius: 3px;
-  color: white;
-  background-color: #2BC3A1;
-}
-
-.saveButton:hover {
-  color: #2BC3A1;
-  background-color: white;
+  justify-content: center;
+  padding-bottom: 40px;
 }

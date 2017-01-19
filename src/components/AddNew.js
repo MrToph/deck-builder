@@ -14,23 +14,23 @@ export default function AddNew({ isListItem }) {
             <i className={`material-icons ${classes.md70} ${classes.mdSvgLight}`}>add_box</i>
           </div>
           <div className={`mdl-card__title ${classesPreview.stickToBottom}`}>
-            <h2 className="mdl-card__title-text">New Card</h2>
+            <h2 className={`mdl-card__title-text ${classes.text}`}>New Card</h2>
           </div>
         </div>
       </Link>
     )
   }
   return (
-    <Link className={classesPreview.link} to="/create">
-      <li className="mdl-list__item">
+    <li className="mdl-list__item">
+      <Link className={classesTableItem.noDecoration} to="/create">
         <span className="mdl-list__item-primary-content">
           <span className={`${classesTableItem.imgSize} ${classes.centerContainer}`}>
             <i className={'material-icons mdl-list__item-icon}'}>add_box</i>
           </span>
-          New Card
+          <span className={classes.text}>New Card</span>
         </span>
-      </li>
-    </Link>
+      </Link>
+    </li>
   )
 }
 

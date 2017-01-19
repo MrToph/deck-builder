@@ -5,7 +5,8 @@ import CardView from '../components/CardView'
 import CreateCardMutation from '../mutations/CreateCardMutation'
 import DeleteCardMutation from '../mutations/DeleteCardMutation'
 import UpdateCardMutation from '../mutations/UpdateCardMutation'
-import styles from './CardPage.scss'
+import deleteIcon from '../../assets/delete.svg'
+import classes from './CardPage.scss'
 
 class CardPage extends React.Component {
   static propTypes = {
@@ -77,7 +78,7 @@ class CardPage extends React.Component {
 
   render() {
     return (
-      <div className="content">
+      <div>
         <CardView
           addNew={this.isAddNew()}
           name={this.state.name}
@@ -85,25 +86,20 @@ class CardPage extends React.Component {
           onNameChange={newName => this.setState({ name: newName })}
           onUrlChange={newUrl => this.setState({ url: newUrl })}
         />
-        <div className="buttonContainer">
-          <div>
-            {!this.isAddNew() &&
-              <img
-                src="https://raw.githubusercontent.com/learnrelay/pokedex/master/branch-step-04-solution/src/assets/delete.svg"
-                className="deleteIcon"
-                alt="Delete"
-                onClick={this.onDelete}
-              />
-            }
-          </div>
-          <div className="actionButtonContainer">
-            <Link className="button cancelButton link" to={'/'}>
-              Cancel
-            </Link>
-            <button className="button saveButton" onClick={this.onSubmit}>
-              {this.isAddNew() ? 'Add' : 'Save'}
+        <div className={classes.buttonContainer}>
+          <Link className="button cancelButton link" to={'/'}>
+            <button className={`mdl-button mdl-js-button mdl-button--fab ${classes.button}`}>
+              <i className="material-icons">arrow_back</i>
             </button>
-          </div>
+          </Link>
+          {!this.isAddNew() &&
+            <button className={`mdl-button mdl-js-button mdl-button--fab ${classes.button}`} onClick={this.onDelete}>
+              <i className="material-icons">delete</i>
+            </button>
+          }
+          <button className={`mdl-button mdl-js-button mdl-button--fab ${classes.button}`} onClick={this.onSubmit}>
+            <i className="material-icons">{this.isAddNew() ? 'add' : 'save'}</i>
+          </button>
         </div>
       </div>
     )
@@ -117,9 +113,7 @@ export default Relay.createContainer(
       id: null,
       idNotNull: false,
     },
-    prepareVariables: (prevVariables) => {
-      return { ...prevVariables, idNotNull: typeof prevVariables.id === 'string' }
-    },
+    prepareVariables: prevVariables => ({ ...prevVariables, idNotNull: typeof prevVariables.id === 'string' }),
     fragments: {
       viewer: () => Relay.QL`
         fragment on Viewer {
