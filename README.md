@@ -1,7 +1,6 @@
 ![Deck Builder](/README/logo.png?raw=true "Logo")
 
-# deck-builder
-Card deck builder with React, Relay and GraphQL.
+Card deck builder with React, Relay and GraphQL. Based on [learnrelay](https://learnrelay.org).
 
 ## Build:
 * Download and get a GraphQL endpoint from `https://www.learnrelay.org/introduction/get-started#graphql-endpoint`. 
