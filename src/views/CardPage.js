@@ -5,13 +5,13 @@ import CardView from '../components/CardView'
 import CreateCardMutation from '../mutations/CreateCardMutation'
 import DeleteCardMutation from '../mutations/DeleteCardMutation'
 import UpdateCardMutation from '../mutations/UpdateCardMutation'
-import deleteIcon from '../../assets/delete.svg'
 import classes from './CardPage.scss'
 
 class CardPage extends React.Component {
   static propTypes = {
     viewer: React.PropTypes.object,
     params: React.PropTypes.object, // from react-router
+    router: React.PropTypes.object,
   }
 
   constructor(props) {

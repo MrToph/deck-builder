@@ -16,22 +16,20 @@ const ViewerQueries = { viewer: (Component, vars) => Relay.QL`
   `,
 }
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <div className={`${classes.root}`}>
-        <Logo />
-        <Router
-          forceFetch
-          environment={Relay.Store}
-          render={applyRouterMiddleware(useRelay)}
-          history={browserHistory}
-        >
-          <Route path="/" component={ListPage} queries={ViewerQueries} />
-          <Route path="/create" component={CardPage} queries={ViewerQueries} />
-          <Route path="/view/:id" component={CardPage} queries={ViewerQueries} />
-        </Router>
-      </div>
-    )
-  }
+export default function App() {
+  return (
+    <div className={`${classes.root}`}>
+      <Logo />
+      <Router
+        forceFetch
+        environment={Relay.Store}
+        render={applyRouterMiddleware(useRelay)}
+        history={browserHistory}
+      >
+        <Route path="/" component={ListPage} queries={ViewerQueries} />
+        <Route path="/create" component={CardPage} queries={ViewerQueries} />
+        <Route path="/view/:id" component={CardPage} queries={ViewerQueries} />
+      </Router>
+    </div>
+  )
 }

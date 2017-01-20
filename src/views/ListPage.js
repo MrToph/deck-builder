@@ -9,7 +9,6 @@ import classes from './ListPage.scss'
 class ListPage extends React.Component {
   static propTypes = {
     viewer: React.PropTypes.object,
-    allCards: React.PropTypes.object,
     relay: React.PropTypes.object,
   }
 
@@ -68,7 +67,7 @@ export default Relay.createContainer(
         // viewer will be exposed to the inner component ListPage as a prop
       viewer: () => Relay.QL`
         fragment on Viewer {
-            id
+          id
           allPokemons (first: 1000, orderBy: $sortOrder) {
             edges {
               node {
