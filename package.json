@@ -2,6 +2,7 @@
   "name": "deck-builder",
   "version": "0.1.0",
   "private": true,
+  "homepage": "mrtoph.github.io/deck-builder/",
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-core": "6.17.0",
